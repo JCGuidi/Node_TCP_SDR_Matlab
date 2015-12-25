@@ -18,7 +18,7 @@ net.createServer(function(sock) {
     sock.on('data', function(data) {
         open = true;
         console.log('DATA ' + sock.remoteAddress + ': ' + data);
-        var order = 'rtl_sdr captura.bin -s ' + data.toString().split(" ")[0] + ' -f ' + data.toString().split(" ")[1] + ' -n ' + data.toString().split(" ")[2];
+        var order = 'rtl_sdr captura.bin -s ' + data.toString().split(" ")[0] + ' -f ' + data.toString().split(" ")[1] + ' -n ' + data.toString().split(" ")[2] + ' -g ' + data.toString().split(" ")[3];
         console.log(order);
 
         exec(order , function(error, stdout, stderr) {
